@@ -10,3 +10,5 @@ This code accompanies a PyCon India 2019 proposal - [How we built a State Machin
 - [ ] Add message passing on crash to `PanicLookoutProcess`
 
 - [ ] Add stateful information passing to `PanicLookoutProcess`
+
+- [ ] Add CPU and I/O profiling for some handy statistics
