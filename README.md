@@ -10,7 +10,7 @@ This produces fake "blocks" of data in the following format
 
 ```json
 {
-    "hash"': "hexstring",
+    "hash": "hexstring",
     "metaData": "a random string"
 }
 ``` 
