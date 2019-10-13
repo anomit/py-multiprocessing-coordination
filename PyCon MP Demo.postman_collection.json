@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "a832a51d-3a89-4309-8eba-488ebd88b0f7",
+		"name": "PyCon MP Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Monitor status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5233"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rollback command",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"message\": \"SNAFU\",\n\"rollbackIndex\": 2000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5232"
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

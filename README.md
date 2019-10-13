@@ -97,6 +97,8 @@ This will cause the running processes to be suspended and `FetcherProcess` will 
 
 ![state rollback](assets/img/mp-processtree-rollback-post.png)
 
+Find the Postman collection for these requests in the file `PyCon MP Demo.postman_collection.json`
+
 ### procmon.py
 
 You can use the code in here to generate graphs on memory and CPU usage via `statsd` and `grafana`
@@ -126,6 +128,26 @@ core-<module>: Saving to cache file
 core-<module>: SyncManager shut down
 ```
 
+## Thundercore Transaction monitoring over websocket
+
+
+### `test_token_transfers.py`
+
+Run this a `pytest` which will deploy an ERC20 token contract from `token.sol`.
+
+Like this:
+
+`pytest -spPf test_token.py`
+
+On deploying the contract via ThunderVigil API, it will send out a few ERC20 token `transfer` calls.
+
+### `token_websocketclient.py`
+
+This connects to the websocket notification service over ThunderVigil.
+
+As of now it pushes all transactions and events registered against your account on ThunderVigil.
+
+>Note: The above two files need an active API key on ThunderVigil to work. You can get yours by signing up on https://thundervigil.com/signup 
 ## TODOs:
 
 - [x] Complete the implementation of `FetcherProcess` to pull data from a simulated data source
